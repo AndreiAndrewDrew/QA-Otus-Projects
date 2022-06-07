@@ -15,7 +15,13 @@ public class FirstTest {
     driver.get("http://google.com");
     driver.manage().window().maximize();
 
-/* Method findElement()
+
+
+
+
+
+
+    /* Method findElement()
     WebElement searchBox = driver.findElement(By.name("q"));
     searchBox.sendKeys("table tennis Ma Long");
     searchBox.submit();
