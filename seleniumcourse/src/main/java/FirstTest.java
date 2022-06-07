@@ -15,6 +15,12 @@ public class FirstTest {
     driver.get("http://google.com");
     driver.manage().window().maximize();
 
+/* Method findElement()
+    WebElement searchBox = driver.findElement(By.name("q"));
+    searchBox.sendKeys("table tennis Ma Long");
+    searchBox.submit();
+*/
+
 /*
     Set<String> oldWindow = driver.getWindowHandles();
     System.out.println("OldWindow->"+oldWindow);
@@ -30,12 +36,6 @@ public class FirstTest {
 
     String window = driver.getWindowHandle();
     System.out.println("Window->"+ window);
-*/
-
-/* Method findElement()
-    WebElement searchBox = driver.findElement(By.name("q"));
-    searchBox.sendKeys("table tennis Ma Long");
-    searchBox.submit();
 */
 
 /* Method getCurrentUrl()
@@ -81,6 +81,15 @@ public class FirstTest {
     driver.get("https://github.com/AndreiAndrewDrew");
     driver.manage().deleteCookieNamed("tz");
     System.out.println("All Cookies -> " + driver.manage().getCookies());
+*/
+
+/* Actions with elements click and submit
+    driver.navigate().to("https://www.facebook.com/");
+//    WebElement loginButton = driver.findElement(By.xpath("//button[@name='login']"));
+//    loginButton.submit();
+
+    WebElement createAccButton = driver.findElement(By.xpath("(//a[@role='button'])[2]"));
+    createAccButton.click();
 */
 
     driver.quit();
