@@ -18,24 +18,34 @@ public class FirstTest {
     driver.get("http://google.com");
     driver.manage().window().maximize();
 
-    Set<String> oldWindow = driver.getWindowHandles();
-    System.out.println("OldWindow->"+oldWindow);
+//    Set<String> oldWindow = driver.getWindowHandles();
+//    System.out.println("OldWindow->"+oldWindow);
+//
+//    ((JavascriptExecutor)driver).executeScript("window.open()");
+//    ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+//
+//    driver.switchTo().window(tabs.get(1));
+//    driver.get("http://curs.md");
+//
+//    Set<String> newWindow = driver.getWindowHandles();
+//    System.out.println("NewWindow->"+ newWindow);
+//
+//    String window = driver.getWindowHandle();
+//    System.out.println("Window->"+ window);
 
-    ((JavascriptExecutor)driver).executeScript("window.open()");
-    ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
-
-    driver.switchTo().window(tabs.get(1));
-    driver.get("http://curs.md");
-
-    Set<String> newWindow = driver.getWindowHandles();
-    System.out.println("NewWindow->"+ newWindow);
-
-    String window = driver.getWindowHandle();
-    System.out.println("Window->"+ window);
-
-    /*WebElement searchBox = driver.findElement(By.name("q"));
+    WebElement searchBox = driver.findElement(By.name("q"));
     searchBox.sendKeys("table tennis Ma Long");
-    searchBox.submit();*/
+    searchBox.submit();
+
+//    String currentUrl = driver.getCurrentUrl();
+//    System.out.println("currentUrl"+currentUrl);
+//    Assert.assertEquals(currentUrl, "http://google.com");
+
+//    String currentTitle = driver.getTitle();
+//    System.out.println("currentTitle -> "+currentTitle);
+//    Assert.assertEquals(currentTitle, "table tennis Ma Long - Căutare Google");
+
+
 
     driver.quit();
 
