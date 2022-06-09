@@ -12,14 +12,8 @@ public class FirstTest {
 
     System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
     WebDriver driver = new ChromeDriver();
-    driver.get("http://google.com");
-    driver.manage().window().maximize();
-
-
-
-
-
-
+//    driver.get("http://google.com");
+//    driver.manage().window().maximize();
 
     /* Method findElement()
     WebElement searchBox = driver.findElement(By.name("q"));
@@ -98,7 +92,19 @@ public class FirstTest {
     createAccButton.click();
 */
 
-    driver.quit();
+/* sendKeys an clear
+    driver.navigate().to("file:///D:/1.Andrew%20Work/1.QA%20Tester%20Projects/seleniumcourse/example.html");
+    WebElement inputField = driver.findElement(By.xpath("//input[@id='myText']"));
+    inputField.clear();
+    inputField.sendKeys("Text Exemple");
+*/
+/* sendKeys()--> upload files "example.html"
+    driver.navigate().to("https://www.file.io/");
+    WebElement inputField = driver.findElement(By.xpath("//input[@id='upload-button']"));
+    inputField.sendKeys("d:\\1.Andrew Work\\1.QA Tester Projects\\seleniumcourse\\example.html");
+*/
+
+//    driver.quit();
 
   }
 }
