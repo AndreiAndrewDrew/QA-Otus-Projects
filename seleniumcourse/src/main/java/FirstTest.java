@@ -2,6 +2,9 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -15,15 +18,6 @@ public class FirstTest {
 
     System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
     WebDriver driver = new ChromeDriver();
-
-//    driver.get("http://google.com");
-//    driver.manage().window().maximize();
-
-    /* Method findElement()
-    WebElement searchBox = driver.findElement(By.name("q"));
-    searchBox.sendKeys("table tennis Ma Long");
-    searchBox.submit();
-*/
 
 /*
     Set<String> oldWindow = driver.getWindowHandles();
@@ -118,6 +112,21 @@ public class FirstTest {
     Assert.assertEquals("Sign In",textContentButton);
 */
 
+/* Driver-Settings-Logs
+    driver.get("http://google.com/222223231");
+    driver.manage().window().maximize();
+//    WebElement searchBox = driver.findElement(By.name("q"));
+//    searchBox.sendKeys("table tennis Ma Long");
+//    searchBox.submit();
+
+    Set<String> allLogsType = driver.manage().logs().getAvailableLogTypes();
+    System.out.println("allLogsType->" + allLogsType);
+
+    LogEntries logs = driver.manage().logs().get(LogType.BROWSER);
+    for (LogEntry entry : logs) {
+      System.out.println("logs->" + entry);
+    }
+*/
 
 //    driver.quit();
 
