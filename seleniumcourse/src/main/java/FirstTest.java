@@ -2,7 +2,10 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Set;
 
@@ -12,6 +15,7 @@ public class FirstTest {
 
     System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
     WebDriver driver = new ChromeDriver();
+
 //    driver.get("http://google.com");
 //    driver.manage().window().maximize();
 
@@ -103,6 +107,17 @@ public class FirstTest {
     WebElement inputField = driver.findElement(By.xpath("//input[@id='upload-button']"));
     inputField.sendKeys("d:\\1.Andrew Work\\1.QA Tester Projects\\seleniumcourse\\example.html");
 */
+
+/* getAtrtribute from Propreties
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    driver.navigate().to("https://www.netflix.com/md-en/");
+    WebElement buttonLogin = wait.until(ExpectedConditions
+            .presenceOfElementLocated(By.xpath("//a[@class='authLinks redButton']")));
+    String textContentButton = buttonLogin.getAttribute("textContent");
+    System.out.println("textContentButton->" + textContentButton);
+    Assert.assertEquals("Sign In",textContentButton);
+*/
+
 
 //    driver.quit();
 
