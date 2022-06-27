@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 public class FirstTest {
   @Test
@@ -18,6 +19,7 @@ public class FirstTest {
 
     System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
     WebDriver driver = new ChromeDriver();
+//    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 /*
     Set<String> oldWindow = driver.getWindowHandles();
@@ -127,6 +129,10 @@ public class FirstTest {
       System.out.println("logs->" + entry);
     }
 */
+
+    driver.get("http://google.com");
+    WebElement conectButton = driver.findElement(By.xpath("//a[@class='gb_1 gb_2 gb_7d gb_7c']"));
+    conectButton.click();
 
 //    driver.quit();
 
