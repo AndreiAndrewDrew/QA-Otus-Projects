@@ -14,12 +14,12 @@ public class CommonActions {
   public static WebDriver createDriver() {
     WebDriver driver = null;
     switch (BROWSER_AND_PLATFORM) {
-      case "chrome_windows":
-        System.setProperty("webDriver.chrome.driver", "src/main/resources/chromedriver.exe");
+      case "CHROME_WINDOWS":
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         break;
-      case "mozilla_windows":
-        System.setProperty("webDriver.gecko.driver", "src/main/resources/geckodriver.exe");
+      case "MOZILL_WINDOWS":
+        System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
         driver = new FirefoxDriver();
         break;
       default:

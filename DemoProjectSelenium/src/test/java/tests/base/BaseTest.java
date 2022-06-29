@@ -31,7 +31,6 @@ public class BaseTest {
   void close() {
     if (!HOLD_BROWSER_OPEN) {
       driver.close();
-
     }
   }
 
