@@ -4,7 +4,7 @@ public class Config {
   /*
   * Specify the browser and platform for test
   * CHROME_WINDOWS
-  * MOZILL_WINDOWS
+  * MOZILLA_WINDOWS
   * */
   public static final String BROWSER_AND_PLATFORM="CHROME_WINDOWS";
 

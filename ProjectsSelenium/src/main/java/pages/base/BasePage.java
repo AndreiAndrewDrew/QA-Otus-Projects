@@ -7,11 +7,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static constants.Constant.TimeoutVariabiles.EXPLICIT_WAIT;
 
 
 public class BasePage {
 
-  WebDriver driver;
+  public WebDriver driver;
 
   public BasePage(WebDriver driver) {
     this.driver = driver;
@@ -22,7 +23,7 @@ public class BasePage {
   }
 
   public WebElement waitElementIsVisible(WebElement element){
-    new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(element));
+    new WebDriverWait(driver, EXPLICIT_WAIT).until(ExpectedConditions.visibilityOf(element));
     return element;
   }
 }
