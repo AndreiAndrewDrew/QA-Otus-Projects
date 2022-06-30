@@ -1,0 +1,1 @@
+{"uuid":"351c3037-e2e0-4771-9c58-de80f17a8cb4","name":"testMobilePhoneReplenisment()","children":["2a6a3114-308c-4a2e-8de6-dd69a0ec5c85"],"befores":[],"afters":[{"name":"clearCookiesAndLocalStorage","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1656590969197,"stop":1656590969271}],"start":1656590964233,"stop":1656590969276}

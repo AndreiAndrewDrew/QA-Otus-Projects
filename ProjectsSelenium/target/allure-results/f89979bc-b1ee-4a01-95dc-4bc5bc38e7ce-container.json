@@ -1,0 +1,1 @@
+{"uuid":"f89979bc-b1ee-4a01-95dc-4bc5bc38e7ce","name":"testCarLeasing()","children":["f182419b-9a76-4385-ad14-1d1c62f4c86d"],"befores":[],"afters":[{"name":"clearCookiesAndLocalStorage","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1656590958555,"stop":1656590960093}],"start":1656590947266,"stop":1656590960326}
