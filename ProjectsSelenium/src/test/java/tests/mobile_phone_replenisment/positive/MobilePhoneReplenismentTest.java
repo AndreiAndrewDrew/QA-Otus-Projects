@@ -14,8 +14,8 @@ public class MobilePhoneReplenismentTest extends BaseTest {
     basePage.goToUrl(MOBILE_PAYMENT);
     mobilePhoneReplenisment
             .enterPhoneNumber(MOBILE_NUMBER).enterAmount(AMOUNT);
-/*    mobilePhoneReplenisment.checkBoxClick();
-    mobilePhoneReplenisment.buttonNextClick();*/
+    mobilePhoneReplenisment.checkBoxClick();
+    mobilePhoneReplenisment.buttonNextClick();
   }
 
 }
