@@ -9,7 +9,7 @@ public class Constant {
   }
 
   public static class Urls{
-    public static final String MOBILE_PAYMENT = "https://epayments.orange.md/?l=2";
+    public static final String MOBILE_PAYMENT = "https://xxxepayments.orange.md/?l=2";
     public static final String CAR_LEASING_CALCULATOR = "https://leasing.md/calculator/";
   }
 

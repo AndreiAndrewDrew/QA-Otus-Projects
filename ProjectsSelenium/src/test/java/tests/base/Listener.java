@@ -24,7 +24,7 @@ public class Listener implements TestWatcher {
             = (TakesScreenshot)((BaseTest) context.getRequiredTestInstance()).driver;
     File source = ts.getScreenshotAs(OutputType.FILE);
     try {
-      FileUtils.copyFile(source, new File("build/reports/tests" + screenshotName
+      FileUtils.copyFile(source, new File("build/reports/tests/" + screenshotName
               + ".png"));
     } catch (IOException e) {
       LOGGER.info("Exception on saving screenshot!");

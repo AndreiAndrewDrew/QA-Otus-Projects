@@ -11,4 +11,6 @@ public class Config {
   public static final boolean CLEAR_COOKIES = true;
   public static final boolean HOLD_BROWSER_OPEN = false;
 
+  public static final boolean CLEAR_REPORTS_DIR = true;
+
 }
