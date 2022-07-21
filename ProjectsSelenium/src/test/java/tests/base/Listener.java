@@ -1,9 +1,11 @@
-package tests.base;
+package common;
 
 import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.slf4j.Logger;
@@ -12,17 +14,26 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 
+import static common.Config.CLEAR_COOKIES;
+
 public class Listener implements TestWatcher {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Listener.class);
+@Override
+void clearCookiesAndLocalStorage() {
+  if (CLEAR_COOKIES) {
+    JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+    driver.manage().deleteAllCookies();
+    javascriptExecutor.executeScript("window.sessionStorage.clear()");
+  }
+}
   @Override
   public void testFailed(ExtensionContext context, Throwable cause){
     LOGGER.info("Test {} - FAILED", context.getTestMethod().get().getName());
     String screenshotName = context.getTestMethod().get().getName()
             + String.valueOf(System.currentTimeMillis()).substring(9,13);
     LOGGER.info("Trying to trace screenshot...");
-    TakesScreenshot ts
-            = (TakesScreenshot)((BaseTest) context.getRequiredTestInstance()).driver;
+    TakesScreenshot ts = (TakesScreenshot) driver;
     File source = ts.getScreenshotAs(OutputType.FILE);
     try {
       FileUtils.copyFile(source, new File("build/reports/tests/" + screenshotName
