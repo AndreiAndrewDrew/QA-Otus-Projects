@@ -1,21 +1,27 @@
 package md.starnet.pages;
 
 import md.starnet.pages.components.LoginBlock;
-import md.starnet.pages.factura.PersonalCabinetPage;
-import org.openqa.selenium.By;
+import md.starnet.pages.personlCabinet.PersonalCabinetPage;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class MainPage {
+public class MainPage extends BasePage<MainPage> {
 
   LoginBlock loginBlock = new LoginBlock();
 
-  public void inputToLogin(String login) {
-   loginBlock.inputToLogin(login);
+  public static MainPage enterToMainPage(){
+    open("https://my.starnet.md/");
+    return page(MainPage.class);
   }
 
-  public void inputToPassword(String password) {
+  public MainPage inputToLogin(String login) {
+   loginBlock.inputToLogin(login);
+   return this;
+  }
+
+  public MainPage inputToPassword(String password) {
     loginBlock.inputToPassword(password);
+    return this;
   }
 
   public PersonalCabinetPage clickOnButtonLogin() {

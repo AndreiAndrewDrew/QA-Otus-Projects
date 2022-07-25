@@ -1,7 +1,6 @@
 package md.starnet.pages.components;
 
 import com.codeborne.selenide.ElementsContainer;
-import md.starnet.pages.factura.PersonalCabinetPage;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;

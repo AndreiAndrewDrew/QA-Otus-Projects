@@ -4,23 +4,24 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import md.starnet.pages.MainPage;
-import md.starnet.pages.factura.PersonalCabinetPage;
+import md.starnet.pages.personlCabinet.PersonalCabinetPage;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.*;
+import static md.starnet.pages.MainPage.enterToMainPage;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class MyStarnetMdTest {
 
-  @Test (enabled = false)
+  @Test
   public void myStarnetMdTest() {
-    //Configuration.browser = "chrome";
-    Configuration.browser = "firefox";
+    Configuration.browser = "chrome";
+//    Configuration.browser = "firefox";
     Configuration.timeout = 5000;
-    //WebDriverManager.chromedriver().setup();
-    WebDriverManager.firefoxdriver().setup();
+    WebDriverManager.chromedriver().setup();
+//    WebDriverManager.firefoxdriver().setup();
 
     /* old method
     System.setProperty("webdriver.chrome.driver", "libs/chrome/chromedriver.exe");
@@ -39,13 +40,18 @@ public class MyStarnetMdTest {
     $(By.linkText("Factura")).click();
     $$(By.linkText("Descarcă")).shouldHave(CollectionCondition.size(7));
 
+    closeWebDriver();
+
   }
 
   @Test
   public void pageObjectTest(){
-    Configuration.browser = "firefox";
+//    Configuration.browser = "firefox";
+    Configuration.browser = "chrome";
     Configuration.timeout = 5000;
-    WebDriverManager.firefoxdriver().setup();
+//    WebDriverManager.firefoxdriver().setup();
+    WebDriverManager.chromedriver().setup();
+
 
     open("https://my.starnet.md/");
 
@@ -61,5 +67,21 @@ public class MyStarnetMdTest {
     assertTrue(personalCabinetPage.isFacturaTableVisible());
     assertEquals(personalCabinetPage.getCountFacturi(),7);
 
+    closeWebDriver();
+
+  }
+
+  @Test
+  public void prototype(){
+    enterToMainPage()
+            .inputToLogin("63041")
+            .inputToPassword("Drewdrewstarnet1")
+            .clickOnButtonLogin()
+            .accesMenuInternet()
+            .accesMenuFactura()
+            .checkContainerWithFacturesIsVisibile()
+            .checkFacturaIsCount(7);
+
+    closeWebDriver();
   }
 }
