@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-07-28T12:23:19 EEST" name="All Test Suite" finished-at="2022-07-28T12:23:41 EEST" duration-ms="22227">
+    <groups>
+    </groups>
+    <test started-at="2022-07-28T12:23:19 EEST" name="D:/1.Andrew Work/1.QA Tester Projects/1.QA (2019)[FROO] Projects/SelenideExemple" finished-at="2022-07-28T12:23:41 EEST" duration-ms="22227">
+      <class name="md.starnet.test.MyStarnetMdTest">
+        <test-method signature="myStarnetMdTest()[pri:0, instance:md.starnet.test.MyStarnetMdTest@1ed1993a]" started-at="2022-07-28T12:23:19 EEST" name="myStarnetMdTest" finished-at="2022-07-28T12:23:32 EEST" duration-ms="12802" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- myStarnetMdTest -->
+        <test-method signature="pageObjectTest()[pri:0, instance:md.starnet.test.MyStarnetMdTest@1ed1993a]" started-at="2022-07-28T12:23:32 EEST" name="pageObjectTest" finished-at="2022-07-28T12:23:36 EEST" duration-ms="4719" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pageObjectTest -->
+        <test-method signature="prototypeTest()[pri:0, instance:md.starnet.test.MyStarnetMdTest@1ed1993a]" started-at="2022-07-28T12:23:36 EEST" name="prototypeTest" finished-at="2022-07-28T12:23:41 EEST" duration-ms="4629" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prototypeTest -->
+      </class> <!-- md.starnet.test.MyStarnetMdTest -->
+    </test> <!-- D:/1.Andrew Work/1.QA Tester Projects/1.QA (2019)[FROO] Projects/SelenideExemple -->
+  </suite> <!-- All Test Suite -->
+</testng-results>

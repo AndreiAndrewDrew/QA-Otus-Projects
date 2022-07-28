@@ -19,7 +19,7 @@ public class MyStarnetMdTest {
   public void myStarnetMdTest() {
     Configuration.browser = "chrome";
 //    Configuration.browser = "firefox";
-    Configuration.timeout = 5000;
+    Configuration.timeout = 10000;
     WebDriverManager.chromedriver().setup();
 //    WebDriverManager.firefoxdriver().setup();
 
@@ -38,7 +38,7 @@ public class MyStarnetMdTest {
     $x("//input[@name='pass']").setValue("Drewdrewstarnet1").pressEnter();
     $(By.linkText("Internet")).click();
     $(By.linkText("Factura")).click();
-    $$(By.linkText("Descarcă")).shouldHave(CollectionCondition.size(7));
+    $$x("//a[@target='_blank']").shouldHave(CollectionCondition.size(8));
 
     closeWebDriver();
 
@@ -65,14 +65,14 @@ public class MyStarnetMdTest {
     personalCabinetPage.clickMenuFactura();
 
     assertTrue(personalCabinetPage.isFacturaTableVisible());
-    assertEquals(personalCabinetPage.getCountFacturi(),7);
+    assertEquals(personalCabinetPage.getCountFacturi(),8);
 
     closeWebDriver();
 
   }
 
   @Test
-  public void prototype(){
+  public void prototypeTest(){
     enterToMainPage()
             .inputToLogin("63041")
             .inputToPassword("Drewdrewstarnet1")
@@ -80,7 +80,8 @@ public class MyStarnetMdTest {
             .accesMenuInternet()
             .accesMenuFactura()
             .checkContainerWithFacturesIsVisibile()
-            .checkFacturaIsCount(7);
+            .checkFacturaIsCount(8)
+            .choseMenu();
 
     closeWebDriver();
   }

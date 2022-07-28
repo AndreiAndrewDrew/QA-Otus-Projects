@@ -1,0 +1,5 @@
+md\starnet\pages\components\LoginBlock.class
+md\starnet\pages\MainPage.class
+md\starnet\pages\personlCabinet\PersonalCabinetPage.class
+md\starnet\test\MyStarnetMdTest.class
+md\starnet\pages\BasePage.class

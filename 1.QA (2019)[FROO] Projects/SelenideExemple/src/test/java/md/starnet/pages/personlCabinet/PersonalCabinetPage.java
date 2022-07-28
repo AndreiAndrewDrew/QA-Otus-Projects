@@ -38,11 +38,11 @@ public class PersonalCabinetPage extends BasePage <PersonalCabinetPage> {
   }
 
   public int getCountFacturi(){
-    return $$(By.linkText("Descarcă")).size();
+    return $$(By.xpath("//a[@target='_blank']")).size();
   }
 
   public PersonalCabinetPage checkFacturaIsCount(int size){
-    $$(By.linkText("Descarcă")).shouldHave(CollectionCondition.size(size));
+    $$(By.xpath("//a[@target='_blank']")).shouldHave(CollectionCondition.size(size));
     return this;
   }
 }
