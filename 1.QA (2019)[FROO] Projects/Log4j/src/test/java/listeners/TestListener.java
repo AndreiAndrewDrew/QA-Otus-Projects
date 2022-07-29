@@ -34,7 +34,7 @@ public class TestListener implements ITestListener {
   }
 
   public void onFinish(ITestContext iTestContext) {
-
+    logger.info("Finish Test");
   }
 
 }

@@ -15,6 +15,6 @@ public class SomeTest extends BaseTest {
 
     driver.get("https://www.google.com/");
     driver.findElement(By.name("q")).sendKeys("Ma Long");
-    driver.findElement(By.name("btnK")).click();
+//    driver.findElement(By.name("btnK")).click();
   }
 }

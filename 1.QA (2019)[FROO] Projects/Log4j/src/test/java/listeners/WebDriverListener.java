@@ -72,6 +72,7 @@ public class WebDriverListener implements WebDriverEventListener {
   }
 
   public void afterClickOn(WebElement element, WebDriver driver) {
+
     logger.info("After Click on" + element.toString());
   }
 

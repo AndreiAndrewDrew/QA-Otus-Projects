@@ -18,7 +18,7 @@ public class BaseTest {
 
   public WebDriver driver;
   public WebDriverWait wait;
-  int timeout = 30;
+  int timeout = 10;
 
   @BeforeClass
   public void beforeTest() {
