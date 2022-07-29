@@ -41,18 +41,29 @@
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
     </dependency>
+
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-support</artifactId>
       <version>4.3.0</version>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-chrome-driver</artifactId>
       <version>4.3.0</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>net.lightbody.bmp</groupId>
+      <artifactId>browsermob-core</artifactId>
+      <version>2.1.5</version>
+      <scope>test</scope>
+    </dependency>
+
+
 
   </dependencies>
 
