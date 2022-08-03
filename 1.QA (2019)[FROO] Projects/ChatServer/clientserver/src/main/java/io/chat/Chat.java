@@ -1,11 +1,13 @@
 package io.chat;
 
+import com.mashape.unirest.http.Unirest;
 import io.javalin.Javalin;
 import io.javalin.http.staticfiles.Location;
 import io.javalin.websocket.WsContext;
 
 import org.json.JSONObject;
 
+import java.rmi.UnexpectedException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
@@ -15,17 +17,25 @@ import static j2html.TagCreator.*;
 
 public class Chat {
   private static Map<WsContext, String> userUsernameMap = new ConcurrentHashMap<>();
-  private static int nextUserNumber = 1; // Assign to username for next connecting user
+  /*private static int nextUserNumber = 1; // Assign to username for next connecting user*/
 
   public static void main(String[] args) {
     Javalin app = Javalin.create(config -> {
-        config.addStaticFiles("/public", Location.CLASSPATH);
-    }).start(7070);
+      config.addStaticFiles("/public", Location.CLASSPATH);
+    }).start(7071);
 
     app.ws("/chat", ws -> {
       ws.onConnect(ctx -> {
-        String username = "User" + nextUserNumber++;
-        userUsernameMap.put(ctx, username);
+        String username = "User"
+                + /*nextUserNumber++*/Unirest.get("http://localhost:7070/hashcode")
+                .asString().getBody();
+
+        // Introducem manual bug in sistema
+        if (username.equals("User7777")) {
+          throw new UnexpectedException("This exception is unexpected(Această excepție este neașteptată)");
+        }
+
+          userUsernameMap.put(ctx, username);
         broadcastMessage("Server", (username + " joined the chat"));
       });
       ws.onClose(ctx -> {
@@ -38,6 +48,7 @@ public class Chat {
       });
     });
   }
+
   // Sends a message from one user to all users, along with a list of current usernames
   private static void broadcastMessage(String sender, String message) {
     userUsernameMap.keySet().stream().filter(ctx -> ctx.session.isOpen()).forEach(session -> {
@@ -48,6 +59,7 @@ public class Chat {
       );
     });
   }
+
   // Builds a HTML element with a sender-name, a message, and a timestamp
   private static String createHtmlMessageFromSender(String sender, String message) {
     return article(

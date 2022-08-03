@@ -9,7 +9,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>clientserver</artifactId>
+  <artifactId>randomnumberServiceStub</artifactId>
 
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
@@ -26,21 +26,6 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
       <version>1.7.36</version>
-    </dependency>
-    <dependency>
-      <groupId>org.json</groupId>
-      <artifactId>json</artifactId>
-      <version>20220320</version>
-    </dependency>
-    <dependency>
-      <groupId>com.j2html</groupId>
-      <artifactId>j2html</artifactId>
-      <version>1.5.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.mashape.unirest</groupId>
-      <artifactId>unirest-java</artifactId>
-      <version>1.4.9</version>
     </dependency>
   </dependencies>
 
