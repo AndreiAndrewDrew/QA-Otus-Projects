@@ -5,7 +5,9 @@ import static java.lang.Thread.sleep;
 
 public class MoneyAccount {
 
-  private static MoneyAccount instance;
+//  private static MoneyAccount instance;
+  private static ThreadLocal<MoneyAccount> instance = new ThreadLocal<>();
+
 
   private Integer account;
 
@@ -14,10 +16,10 @@ public class MoneyAccount {
   }
 
   public static MoneyAccount getInstance() {
-    if (instance == null) {
-      instance = new MoneyAccount();
+    if (instance.get() == null) {
+      instance.set(new MoneyAccount());
     }
-    return instance;
+    return instance.get();
   }
 
   public void cache(final int amount) {
@@ -135,7 +137,7 @@ public class MoneyAccount {
 
   public static void main(String[] args) throws InterruptedException {
 
-    System.out.println("Situatie N1. Folosim bancomat lucrator!");
+    /*System.out.println("Situatie N1. Folosim bancomat lucrator!");
 
     CachePoint point1 = new CachePoint();
     point1.setId(1);
@@ -156,7 +158,7 @@ public class MoneyAccount {
     point2.start();
     point3.start();
 
-    sleep(100);
+    sleep(100);*/
 
     System.out.println("Situatie N2. Folosim bancomat Stricat!");
 
