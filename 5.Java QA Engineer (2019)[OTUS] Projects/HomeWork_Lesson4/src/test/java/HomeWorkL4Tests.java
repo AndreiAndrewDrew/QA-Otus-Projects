@@ -4,12 +4,12 @@ import org.openqa.selenium.WebElement;
 
 import static org.junit.Assert.assertEquals;
 
-public class HomeWorkL4Test extends BaseTest {
+public class HomeWorkL4Tests extends BaseTest {
 
 
   ///session/{session id}/element/{element id}/clear
   @Test
-  public void creationProjectTest() {
+  public void createNewProjectTest() {
 
     driver.get("http://testlink/index.php");
     driver.findElement(By.id("login")).clear();
@@ -24,8 +24,8 @@ public class HomeWorkL4Test extends BaseTest {
 
     driver.findElement(By.name("create")).click();
 
-    driver.findElement(By.name("tprojectName")).sendKeys("AndrewProject1");
-    driver.findElement(By.name("tcasePrefix")).sendKeys("a001");
+    driver.findElement(By.name("tprojectName")).sendKeys("AndrewProject2");
+    driver.findElement(By.name("tcasePrefix")).sendKeys("a002");
 
     driver.findElement(By.name("active")).isSelected();
     driver.findElement(By.name("is_public")).isSelected();
